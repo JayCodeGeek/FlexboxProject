@@ -1,0 +1,252 @@
+@keyframes fadein {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  height: auto;
+  width: auto;
+  background: linear-gradient(60deg, blue, red, yellow);
+  font-family: "Vollkorn", serif;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 1201px) {
+
+  .parentcontainer {
+    /* applied on parent container */
+    display: flex;
+    /* Moves the child element on the next line according to the width of the screen */
+    flex-wrap: wrap;
+    /* space between child elements in parent container */
+    gap: 20px;
+    /* moves the child element to the center*/
+    flex-direction: row;
+    /* applied to child element on main-axis, by default is row */
+    justify-content: center;
+    /* applied to child element on cross-axis */
+  }
+
+  .card {
+    min-width: 350px;
+    max-width: 600px;
+    position: relative;
+    background-color: rgb(87, 49, 49);
+    height: 250px;
+    flex-basis: 45%;
+    border-radius: 30px;
+  }
+
+  .frontcard {
+    position: absolute;
+    background-color: rgb(255, 216, 164);
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+  }
+
+  .frontcard p {
+    color: white;
+    position: relative;
+    top: 80%;
+    z-index: 1;
+    margin: 5px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .frontcard > img {
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+  }
+
+  .backcard{
+    border-radius: 30px;
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    display: none;
+    animation: fadein 2s ease 0s 1 normal; 
+  }
+  iframe{
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+  }
+  .card:hover .backcard{
+    display: block;
+  }
+  .footer,
+  a {
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  a:hover {
+    color: rgb(0, 238, 255);
+    font-weight: bold;
+  }
+}
+
+@media (min-width:601px) and (max-width:1200px) {
+  .parentcontainer{
+    display: flex;
+    /* first value is of property flex-direction and the second value is of property flex-wrap */
+    flex-flow: row wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .card{
+    border-radius: 30px;
+    background-color: aliceblue;
+    position: relative;
+    height:250px;
+    min-width: 280px;
+    flex-basis: 45%;
+  }
+  .frontcard{
+    border-radius: 30px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+  }
+  .frontcard p{
+    position: relative;
+    z-index: 1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    top: 72.5%;
+  }
+  .frontcard img{
+    position: absolute;
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+  }
+  .footer,a{
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+  }
+  .backcard{
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    display: none;
+    animation: fadein 2s ease 0s 1 normal;
+  }
+  iframe{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+  }
+  .card:hover .backcard{
+    display: block;
+  }
+  .footer a:hover{
+    font-weight: bold;
+    color: rgb(0, 238, 255); 
+  }
+}
+@media (max-width:600px) {
+  body{
+    margin: 0px;
+    padding: 0px;
+    background:linear-gradient(90deg, red, orange, yellow);
+  }
+  .parentcontainer{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+    justify-content: center;
+    /* aligns to center on cross-axis */
+    align-items: center;
+  }
+  .card{
+    position: relative;
+    border-radius: 20px;
+    height: 300px;
+    width: 80%;
+    min-width: 300px;
+    background-color: aqua;
+  }
+  .frontcard{
+    position: absolute;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+  }
+  .frontcard p{
+    position: relative;
+    z-index: 1;
+    margin: 5px 0px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    top:85%;
+    color: white;
+  }
+  .frontcard img{
+    position: absolute;
+    border-radius: 20px;
+    top:0%;
+    height: 100%;
+    width: 100%;
+  }
+  .backcard{
+    position: absolute;
+    border-radius: 20px;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    animation: fadein 2s ease 0s 1 normal;
+    display: none;
+  }
+  iframe{
+    position: absolute;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+  }
+  .card:hover .backcard{
+    display: block;
+  } 
+  .footer,a{
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+  }
+  .footer a:hover{
+    color: rgb(0, 238, 255);
+    font-weight: bold;
+  }
+  
+}
